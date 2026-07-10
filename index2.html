@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<!-- <link rel="stylesheet" href="style.css"> -->
+ <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+
+    <title>Student Profile</title>
+
+</head>
+
+<body>
+
+<h1>Student Information</h1>
+
+<hr>
+
+<h2>Name : {{ student.name }}</h2>
+
+<h2>Roll No : {{ student.roll }}</h2>
+
+<h2>Course : {{ student.course }}</h2>
+
+<h2>City : {{ student.city }}</h2>
+
+<h2>Marks : {{ student.marks }}</h2>
+
+<hr>
+
+<h2>Name in Uppercase</h2>
+
+<p>{{ student.name | upper }}</p>
+
+<hr>
+
+<h2>Total Subjects</h2>
+
+<p>{{ subjects | length }}</p>
+
+<hr>
+
+<h2>Subject List</h2>
+
+<ul>
+
+{% for subject in subjects %}
+
+<li>{{ subject }}</li>
+
+{% endfor %}
+
+</ul>
+
+<hr>
+
+<h2>Result</h2>
+
+{% if student.marks >= 35 %}
+
+<h3>Pass</h3>
+
+{% else %}
+
+<h3>Fail</h3>
+
+{% endif %}
+
+<hr>
+
+<h2>Navigation</h2>
+
+<a href="/">Home</a>
+
+
+</body>
+
+</html>

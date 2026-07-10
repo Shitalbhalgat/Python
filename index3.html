@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Registration Form</title>
+</head>
+<body>
+
+<h1>Student Registration Form</h1>
+
+<form action="/register" method="POST">
+
+<!-- Text -->
+
+<label>Name</label><br>
+<input type="text" name="name"><br><br>
+
+<!-- Email -->
+
+<label>Email</label><br>
+<input type="email" name="email"><br><br>
+
+<!-- Password -->
+
+<label>Password</label><br>
+<input type="password" name="password"><br><br>
+
+<!-- Number -->
+
+<label>Mobile Number</label><br>
+<input type="number" name="mobile"><br><br>
+
+<!-- Age -->
+
+<label>Age</label><br>
+<input type="number" name="age"><br><br>
+
+<!-- Date -->
+
+<label>Date of Birth</label><br>
+<input type="date" name="dob"><br><br>
+
+<!-- Radio Button -->
+
+<label>Gender</label><br>
+
+<input type="radio" name="gender" value="Male"> Male
+
+<input type="radio" name="gender" value="Female"> Female
+
+<input type="radio" name="gender" value="Other"> Other
+
+<br><br>
+
+<!-- Checkbox -->
+
+<label>Hobbies</label><br>
+
+<input type="checkbox" name="hobbies" value="Reading"> Reading
+
+<input type="checkbox" name="hobbies" value="Sports"> Sports
+
+<input type="checkbox" name="hobbies" value="Music"> Music
+
+<input type="checkbox" name="hobbies" value="Coding"> Coding
+
+<br><br>
+
+<!-- Select -->
+
+<label>Course</label><br>
+
+<select name="course">
+
+<option value="">Select Course</option>
+
+<option value="Computer Engineering">Computer Engineering</option>
+
+<option value="Information Technology">Information Technology</option>
+
+<option value="Mechanical Engineering">Mechanical Engineering</option>
+
+<option value="Civil Engineering">Civil Engineering</option>
+
+<option value="Electrical Engineering">Electrical Engineering</option>
+
+</select>
+
+<br><br>
+
+<!-- Textarea -->
+
+<label>Address</label><br>
+
+<textarea name="address" rows="4" cols="30"></textarea>
+
+<br><br>
+
+<!-- City -->
+
+<label>City</label><br>
+
+<input type="text" name="city">
+
+<br><br>
+
+<!-- Submit -->
+
+<input type="submit" value="Register">
+
+<input type="reset" value="Clear">
+
+</form>
+
+</body>
+</html>
