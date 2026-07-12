@@ -1,24 +1,24 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-    <title>Cookie Example</title>
+    <title>Session Example</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
-
 <body>
 
 <div class="container">
 
-<h1>Cookie Example</h1>
+<h1>Student Login</h1>
 
-<form action="/save" method="POST">
+<form action="/check" method="POST">
 
 <label>Username</label>
-
 <input type="text" name="username">
 
-<button type="submit">Save Cookie</button>
+<label>Password</label>
+<input type="password" name="password">
+
+<button type="submit">Login</button>
 
 </form>
 

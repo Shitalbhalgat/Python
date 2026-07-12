@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Profile</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Cookie Information</h1>
+
+<p><strong>Username :</strong> {{ username }}</p>
+
+<a href="/logout">Delete Cookie</a>
+
+</div>
+
+</body>
+</html>
