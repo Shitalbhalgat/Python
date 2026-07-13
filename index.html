@@ -1,9 +1,37 @@
-{% extends "base.html" %}
+<!DOCTYPE html>
 
-{% block content %}
+<html>
 
-<h2>Welcome to Home Page</h2>
+<head>
 
-<p>This is the Home Page.</p>
+    <title>Flask File Upload</title>
 
-{% endblock %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Flask File Upload</h1>
+
+        <form action="/upload" method="POST" enctype="multipart/form-data">
+
+            <label>Select File</label>
+
+            <input type="file" name="photo" required>
+
+            <button type="submit">
+
+                Upload File
+
+            </button>
+
+        </form>
+
+    </div>
+
+</body>
+
+</html>

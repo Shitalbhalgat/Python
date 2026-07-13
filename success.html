@@ -1,49 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Registration Successful</title>
+    <title>Upload Successful</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-
-<h1>Student Details</h1>
-
-<hr>
-
-<p><b>Name :</b> {{ name }}</p>
-
-<p><b>Email :</b> {{ email }}</p>
-
-<p><b>Password :</b> {{ password }}</p>
-
-<p><b>Mobile :</b> {{ mobile }}</p>
-
-<p><b>Age :</b> {{ age }}</p>
-
-<p><b>Date of Birth :</b> {{ dob }}</p>
-
-<p><b>Gender :</b> {{ gender }}</p>
-
-<p><b>Course :</b> {{ course }}</p>
-
-<p><b>Address :</b> {{ address }}</p>
-
-<p><b>City :</b> {{ city }}</p>
-
-<p><b>Hobbies :</b></p>
-
-<ul>
-
-{% for hobby in hobbies %}
-
-<li>{{ hobby }}</li>
-
-{% endfor %}
-
-</ul>
-
-<hr>
-
-<a href="/">Back to Registration</a>
-
+    <div class="container">
+        <h1>Upload Successful</h1>
+        <div class="success">
+            File Uploaded Successfully
+        </div>
+        <h3>Uploaded File</h3>
+        <p>{{ filename }}</p>
+        <a href="/">Upload Another File</a>
+    </div>
 </body>
+
 </html>
