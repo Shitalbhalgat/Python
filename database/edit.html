@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Edit Student</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Edit Student</h1>
+
+    <form action="/update" method="POST">
+
+        <!-- Hidden Student ID -->
+
+        <input
+            type="hidden"
+            name="id"
+            value="{{ student[0] }}">
+
+        <!-- Student Name -->
+
+        <label>Student Name</label>
+
+        <input
+            type="text"
+            name="name"
+            value="{{ student[1] }}"
+            required>
+
+        <!-- Email -->
+
+        <label>Email</label>
+
+        <input
+            type="email"
+            name="email"
+            value="{{ student[2] }}"
+            required>
+
+        <!-- Course -->
+
+        <label>Course</label>
+
+        <select name="course">
+
+            <option value="Python"
+            {% if student[3]=="Python" %}selected{% endif %}>
+                Python
+            </option>
+
+            <option value="Java"
+            {% if student[3]=="Java" %}selected{% endif %}>
+                Java
+            </option>
+
+            <option value="PHP"
+            {% if student[3]=="PHP" %}selected{% endif %}>
+                PHP
+            </option>
+
+            <option value="Flask"
+            {% if student[3]=="Flask" %}selected{% endif %}>
+                Flask
+            </option>
+
+        </select>
+
+        <br><br>
+
+        <button type="submit">
+
+            Update Student
+
+        </button>
+
+        <br><br>
+
+        <a href="/students">
+
+            Back to Student List
+
+        </a>
+
+    </form>
+
+</div>
+
+</body>
+
+</html>
