@@ -55,7 +55,7 @@ import bcrypt
 app = Flask(__name__)
 app.secret_key = "supersecretkey"
 
-# 🔐 Fake database (hashed passwords)
+#  Fake database (hashed passwords)
 users = {
     "admin": {
         "password": bcrypt.hashpw("1234".encode(), bcrypt.gensalt()),
@@ -122,14 +122,14 @@ homes.html
 </head>
 <body>
 
-<h1>Welcome {{ user }} 🎉</h1>
+<h1>Welcome {{ user }} </h1>
 
 <p>Your role: <b>{{ role }}</b></p>
 
 {% if role == "admin" %}
-    <h3>🔐 Admin Panel Access Granted</h3>
-{% else %}
-    <h3>👤 Normal User Access</h3>
+    <h3> Admin Panel Access Granted</h3>
+{% else %
+    <h3> Normal User Access</h3>
 {% endif %}
 
 <a href="/logout">Logout</a>
