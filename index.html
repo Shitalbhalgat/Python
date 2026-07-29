@@ -1,12 +1,11 @@
 <!DOCTYPE html>
-
 <html>
 
 <head>
 
-    <title>Flask File Upload</title>
+    <title>Flask AI Chatbot</title>
 
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='style.css') }}">
 
 </head>
 
@@ -14,23 +13,82 @@
 
     <div class="container">
 
-        <h1>Flask File Upload</h1>
+        <h2>AI Chatbot</h2>
 
-        <form action="/upload" method="POST" enctype="multipart/form-data">
+        <div id="chatbox"></div>
 
-            <label>Select File</label>
+        <input type="text" id="message" placeholder="Type your message">
 
-            <input type="file" name="photo" required>
-
-            <button type="submit">
-
-                Upload File
-
-            </button>
-
-        </form>
+        <button onclick="sendMessage()">Send</button>
 
     </div>
+    <div class="chat-icon" onclick="openChat()">
+    💬
+</div>
+
+<div class="chat-box" id="chatBox">
+
+    <div class="header">
+        AI Assistant
+        <span onclick="closeChat()">✖</span>
+    </div>
+
+    <div id="messages"></div>
+
+    <input type="text" id="message">
+
+    <button onclick="sendMessage()">
+        Send
+    </button>
+
+</div>
+
+    <script>
+function openChat(){
+
+    document.getElementById("chatBox").style.display="block";
+
+}
+
+function closeChat(){
+
+    document.getElementById("chatBox").style.display="none";
+
+}
+        function sendMessage() {
+
+            let message = document.getElementById("message").value;
+
+            fetch("/chat", {
+
+                method: "POST",
+
+                headers: {
+                    "Content-Type": "application/json"
+                },
+
+                body: JSON.stringify({  message: message})
+            })
+
+                .then(res => res.json())
+
+                .then(data => {
+
+                    let chat = document.getElementById("chatbox");
+
+                    chat.innerHTML += "<p><b>You :</b> " + message + "</p>";
+
+                    chat.innerHTML += "<p><b>AI :</b> " + data.reply + "</p>";
+
+                    document.getElementById("message").value = "";
+
+                    chat.scrollTop = chat.scrollHeight;
+
+                });
+
+        }
+
+    </script>
 
 </body>
 
